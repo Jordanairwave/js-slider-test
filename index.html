@@ -7,6 +7,37 @@
     <title>JS Slider Test</title>
 </head>
 <body>
-    
+    <input type="range" step="100" name="licences" class="slider" min="100" max="25000" value="12500">
+    <br>
+    <output class="rangeslider-output">12500</output>
+    <br>
+    <p>xyz of your learners feel unprepared for employment (45% of slider total)<br><span class="first-value">5625</span></p>
+    <p>xyz of your learners feel they face significant barriers to employment (96% of slider total)<br><span class="second-value">12000</span></p>
+    <p>xyz of your learners will change their career plan (45% of slider total)<br><span class="first-value">5625</span></p>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+    $( document ).ready(function() {
+        
+        $('.slider').on('input change', function() {
+
+            //range value
+            var rangeSliderValue = this.value
+
+            //out put rant slider
+            $('.rangeslider-output').html(rangeSliderValue);
+
+            //45% field
+            var firstValue = rangeSliderValue / 100 * 45;
+
+            $('.first-value').html(firstValue);
+
+            //96% field
+            var secondValue = rangeSliderValue / 100 * 96;
+
+            $('.second-value').html(secondValue);
+        });
+    });
+</script>
 </html>
