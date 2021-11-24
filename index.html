@@ -113,7 +113,7 @@
     <section class="rangeslider__section">
         <div class="rangeslider__section-wrapper">
             <h2>How many learners does your organisation have?</h2>
-            <output class="rangeslider-output">5000</output>
+            <output class="rangeslider-output">5,000</output>
             <input type="range" step="100" name="licences" class="slider" min="0" max="10000" value="5000">
             <div class="rangeslider__values">
                 <p class="rangeslider__values--min">0</p>
@@ -121,15 +121,15 @@
             </div>
             <div class="rangeslider__outputs">
                 <div class="rangeslider__outputs-col">
-                    <p class="first-value">2250</p>
+                    <p class="first-value">2,250</p>
                     <p>xyz of your learners feel unprepared for employment)</p>
                 </div>
                 <div class="rangeslider__outputs-col">
-                    <p class="second-value">4800</p>
+                    <p class="second-value">4,800</p>
                     <p>xyz of your learners feel they face significant barriers to employment</p>
                 </div>
                 <div class="rangeslider__outputs-col">
-                    <p class="first-value">2250</p>
+                    <p class="first-value">2,250</p>
                     <p>xyz of your learners will change their career plan</p>
                 </div>
             </div>
@@ -143,15 +143,16 @@
         var output = document.querySelectorAll('.rangeslider-output')[0];
         
         $(document).on('input', 'input[type="range"]', function(e) {
-                output.innerHTML = e.currentTarget.value;
+                output.innerHTML = Number(e.currentTarget.value).toLocaleString('en');
 
                 //45% calculation
                 var fortyFivePercent = e.currentTarget.value / 100 * 45;
-                $('.first-value').html(fortyFivePercent);
+
+                $('.first-value').html(Number(fortyFivePercent).toLocaleString('en'));
 
                 //96% Calculation
                 var nintySixPercent = e.currentTarget.value / 100 * 96;
-                $('.second-value').html(nintySixPercent);
+                $('.second-value').html(Number(nintySixPercent).toLocaleString('en'));
         });
         
         $('input[type=range]').rangeslider({
