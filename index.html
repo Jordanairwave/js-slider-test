@@ -46,12 +46,36 @@
             display: flex;
             width: 100%;
             justify-content: space-between;
+            margin-bottom: 30px;
         }
 
         .rangeslider__section .rangeslider__values p {
             font-weight: bold;
             font-size: 24px;
             margin: 0 0 0 0;
+        }
+
+        .rangeslider__section .rangeslider__outputs {
+            position: relative;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 20px;
+        }
+
+        .rangeslider__section .rangeslider__outputs-col p:nth-of-type(1) {
+            margin: 0 0 10px;
+            font-size: 48px;
+            line-height: 1.1em;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .rangeslider__section .rangeslider__outputs-col p:nth-of-type(2) {
+            font-size: 16px;
+            line-height: 1.6em;
+            margin-bottom: 15px;
+            text-align: center;
         }
     </style>
 </head>
@@ -65,9 +89,20 @@
             <p class="rangeslider__values--min">0</p>
             <p class="rangeslider__values--max">10,000</p>
         </div>
-        <p>xyz of your learners feel unprepared for employment (45% of slider total)<br><span class="first-value">2250</span></p>
-        <p>xyz of your learners feel they face significant barriers to employment (96% of slider total)<br><span class="second-value">4800</span></p>
-        <p>xyz of your learners will change their career plan (45% of slider total)<br><span class="first-value">2250</span></p>
+        <div class="rangeslider__outputs">
+            <div class="rangeslider__outputs-col">
+                <p class="first-value">2250</p>
+                <p>xyz of your learners feel unprepared for employment)</p>
+            </div>
+            <div class="rangeslider__outputs-col">
+                <p class="second-value">4800</p>
+                <p>xyz of your learners feel they face significant barriers to employment</p>
+            </div>
+            <div class="rangeslider__outputs-col">
+                <p class="first-value">2250</p>
+                <p>xyz of your learners will change their career plan</p>
+            </div>
+        </div>
     </section>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
